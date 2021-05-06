@@ -19,6 +19,7 @@ def idle_rpg():
         status()
         time.sleep(3610) #1hour = 3600seconds, added 10 for delay
         status()
+        print("adventure completed")
     
 def pokemon():
     def route():
@@ -52,5 +53,6 @@ def pokemon():
 
 
 if __name__ == '__main__':
+    print("running")
     Thread(target = idle_rpg).start()
     Thread(target = pokemon).start()
