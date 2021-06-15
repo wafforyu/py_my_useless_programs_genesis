@@ -1,88 +1,106 @@
 import time
-from threading import Thread
+#from threading import Thread
 from pyautogui import typewrite, sleep, press
-from random import choice, randint
+from random import choice, randint, shuffle
 
 #ctrl+c on terminal to stop the program.
 
-random_sleep = randint(1,6)
+def memey():
+    arr = ['4chan', 'antiantjoke', 'blacktwitter','chucknorris','comics','discordmeme','joke','meirl','prequel','pun','sequel']
+    typewrite('pls ' + choice(arr))
+    sleep(2)
+    press('enter')
 
 def bal():
     typewrite('pls bal')
     press('enter')
 
 def shop_inv():
-    number = str(randint(1,6))
-    sleep(random_sleep)
+    random_sleep = randint(2,6)
+    number = str(randint(2,5))
     typewrite('pls shop '+ number)
+    sleep(random_sleep)
     press('enter')
 
-    number = str(randint(1,6))
-    sleep(random_sleep)
+    number = str(randint(2,6))
     typewrite('pls inv '+ number)
+    sleep(random_sleep)
     press('enter')
 
 def dep():
-    sleep(random_sleep)
+    random_sleep = randint(2,6)
     typewrite('pls dep all')
+    sleep(random_sleep)
     press('enter')
 
 def postmemes():
+    random_sleep = randint(2,6)
     arr = ['f','r','i','c','k']
-    sleep(random_sleep)
     typewrite('pls postmemes')
+    sleep(random_sleep)
     press('enter')
 
-    sleep(random_sleep)
+    random_sleep = randint(2,4)
     typewrite(choice(arr))
+    sleep(random_sleep)
     press('enter')
 
 def trivia():
+    random_sleep = randint(2,6)
     arr = ['a','b','c','d']
-    sleep(random_sleep)
     typewrite('pls trivia')
+    sleep(random_sleep)
     press('enter')
     
-    sleep(random_sleep)
+    random_sleep = randint(2,4)
     typewrite(choice(arr))
+    sleep(random_sleep)
     press('enter')
     
 def beg():
-    sleep(random_sleep)
+    random_sleep = randint(2,6)
     typewrite('pls beg')
+    sleep(random_sleep)
     press('enter')
 
 def dig():
-    sleep(random_sleep)
+    random_sleep = randint(2,6)
     typewrite('pls dig')
+    sleep(random_sleep)
     press('enter')
 
 def fish():
-    sleep(random_sleep)
+    random_sleep = randint(2,6)
     typewrite('pls fish')
+    sleep(random_sleep)
     press('enter')
 
 def hunt():
-    sleep(random_sleep)
+    random_sleep = randint(2,6)
     typewrite('pls hunt')
+    sleep(random_sleep)
     press('enter')
 
+def level():
+    random_sleep = randint(2,6)
+    typewrite('pls level')
+    sleep(random_sleep)
+    press('enter')
+
+arr_functions = [memey, bal, shop_inv, postmemes,trivia, beg, dig, fish, hunt, memey]
+
 def main():
-    sec = randint(18,24)
+    random_sleep = randint(18,24)
     x = 1
     while x:
-        trivia()
-        beg()
-        dig()
-        fish()
-        hunt()
-        postmemes()
+        shuffle(arr_functions)
+        for f in arr_functions:
+            f()
+        sleep(random_sleep)
         dep()
-        shop_inv()
-        sleep(sec)
-        bal()
         
 if __name__ == '__main__':
     print("running")
     sleep(5)
     main()
+
