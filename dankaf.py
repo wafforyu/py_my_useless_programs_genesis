@@ -3,13 +3,10 @@ import time
 from pyautogui import typewrite, sleep, press
 from random import choice, randint, shuffle
 
-#ctrl+c on terminal to stop the program.
-
 def guess():
     typewrite('pls guess')
     sleep(2)
     press('enter')
-
     for i in range(0,4):
         typewrite(str(randint(1,20)))
         sleep(1)
@@ -36,33 +33,33 @@ def shop():
     random_sleep = randint(2,6)
     number = str(randint(2,5))
     typewrite('pls shop '+ number)
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def inv():
     random_sleep = randint(2,6)
     number = str(randint(2,4))
     typewrite('pls inv '+ number)
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def dep():
     random_sleep = randint(2,6)
     typewrite('pls dep all')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def postmemes():
     random_sleep = randint(2,6)
     arr = ['f','r','i','c','k']
     typewrite('pls postmemes')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
     random_sleep = randint(1,3)
     typewrite(choice(arr))
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def trivia():
     random_sleep = randint(2,6)
@@ -73,35 +70,34 @@ def trivia():
     
     random_sleep = randint(2,4)
     typewrite(choice(arr))
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
     
 def beg():
     random_sleep = randint(2,6)
     typewrite('pls beg')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def dig():
     random_sleep = randint(2,6)
     typewrite('pls dig')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def fish():
     random_sleep = randint(2,6)
     typewrite('pls fish')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def hunt():
     random_sleep = randint(2,6)
     typewrite('pls hunt')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
 
 def level():
-
     r = randint(0,1)
     if r:
         random_sleep = randint(2,6)
@@ -110,7 +106,6 @@ def level():
         press('enter')
     
 def active():
-
     r = randint(0,1)
     if r:
         random_sleep = randint(2,6)
@@ -130,9 +125,9 @@ def random_word():
     press('enter')
 
 def chance():
-    flip = randint(0,19)
-    if flip == 1:
-        print("5% just happened")
+    flip = randint(0,10)
+    if flip == 5:
+        print("10% just happened")
         return True
     return False
 
@@ -147,11 +142,15 @@ def main():
         for f in arr_functions:
             f()
         sleep(random_sleep)
-        active()
+        r = randint(0,1)
+        if r:
+            active()
         if chance():
             sleep(180)
         
 if __name__ == '__main__':
     print("running")
+    sleep(5)
+    sleep(300)
     main()
 
