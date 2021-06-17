@@ -1,5 +1,4 @@
 import time
-#from threading import Thread
 from pyautogui import typewrite, sleep, press
 from random import choice, randint, shuffle
 
@@ -9,8 +8,9 @@ def guess():
     press('enter')
     for i in range(0,4):
         typewrite(str(randint(1,20)))
-        sleep(1)
+        sleep(2)
         press('enter')
+    sleep(3)
 
 def memey():
     random_sleep = randint(7,12)
@@ -24,9 +24,10 @@ def bal():
     sleep(2)
     typewrite('pls bal')
     press('enter')
-
-    r = randint(0,1)
-    if r:
+    random_sleep = randint(2,6)
+    sleep(random_sleep)
+    r = randint(0,4)
+    if r == 2:
         dep()
 
 def shop():
@@ -65,8 +66,8 @@ def trivia():
     random_sleep = randint(2,6)
     arr = ['a','b','c','d']
     typewrite('pls trivia')
-    sleep(random_sleep)
     press('enter')
+    sleep(random_sleep)
     
     random_sleep = randint(2,4)
     typewrite(choice(arr))
@@ -102,16 +103,16 @@ def level():
     if r:
         random_sleep = randint(2,6)
         typewrite('pls level')
-        sleep(random_sleep)
         press('enter')
+        sleep(random_sleep)
     
 def active():
-    r = randint(0,1)
-    if r:
+    r = randint(0,5)
+    if not r:
         random_sleep = randint(2,6)
         typewrite('pls level --active')
-        sleep(random_sleep)
         press('enter')
+        sleep(random_sleep)
 
 def random_word():
     random_word = ["bark","mighty","yourself","finally","rays","what"
@@ -125,14 +126,13 @@ def random_word():
     press('enter')
 
 def chance():
-    flip = randint(0,10)
-    if flip == 5:
-        print("10% just happened")
+    flip = randint(0,20)
+    if flip == 3:
+        print("5% just happened")
         return True
     return False
 
 arr_functions = [guess, random_word, postmemes , bal, trivia, level, beg, dig, fish, hunt]
-
 
 def main():
     x = 1
@@ -146,11 +146,9 @@ def main():
         if r:
             active()
         if chance():
-            sleep(180)
+            sleep(150)
         
 if __name__ == '__main__':
     print("running")
-    sleep(5)
-    sleep(300)
+    sleep(120)
     main()
-
