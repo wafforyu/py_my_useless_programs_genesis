@@ -4,7 +4,7 @@ from random import choice, randint, shuffle
 
 
 def stop_chance():
-    if randint(1, 20) == 10:
+    if randint(1, 20) == 3:
         print("1 in 20 just occured.")
         return True
     return False
@@ -15,17 +15,18 @@ def guess():
     press('enter')
     for i in range(0, 4):
         write(str(randint(1, 20)))
-        sleep(randint(2, 4))
+        sleep(randint(1, 3))
         press('enter')
     sleep(randint(3, 6))
 
 
 def memey():
-    arr = ['4chan', 'blacktwitter', 'chucknorris', 'comics',
-           'discordmeme', 'joke', 'meirl', 'prequel', 'pun', 'sequel']
-    write('pls ' + choice(arr))
-    press('enter')
-    sleep(randint(5, 8))
+    if low_priority:
+        arr = ['blacktwitter', 'chucknorris', 'comics',
+            'discordmeme', 'joke', 'meirl', 'prequel', 'pun', 'sequel']
+        write('pls ' + choice(arr))
+        press('enter')
+        sleep(randint(5, 8))
 
 
 def bal():
@@ -37,7 +38,7 @@ def bal():
 
 
 def dep():
-    write('pls dep')
+    write('pls dep all')
     press('enter')
     sleep(randint(2, 6))
 
@@ -101,12 +102,18 @@ def active():
 
 
 def random_word():
-    arr = ["why not", "meh", "shit", "ok", "alright", "dope",
+    arr = ["meh", "shit", "ok", "alright", "dope",
            "dank", "hmmm", "ehh", "damn", "okay", "nice", "gg",
            "ggwp"]
     write(choice(arr))
     press('enter')
     sleep(randint(2, 6))
+
+def low_priority():
+    f = randint(0,40)
+    if f == 3:
+        return True
+    return False
 
 
 def main():
