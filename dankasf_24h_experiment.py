@@ -126,19 +126,20 @@ def main():
     arr = [guess, bal, postmemes, trivia, beg, dig,
            fish, hunt, level, random_word]
 
-
     while 1:
-        for i in range(0,268):
-            shuffle(arr)
-            for f in arr:
-                f()
-            if stop_chance():
-                write('brb')
-                press('enter')
-                sleep(randint(120,180))
-            else:
-                sleep(randint(20, 40))
-        lottery()
+        for i in range(0,3):
+            for i in range(0,268):
+                shuffle(arr)
+                for f in arr:
+                    f()
+                if stop_chance():
+                    write('brb')
+                    press('enter')
+                    sleep(randint(120,180))
+                else:
+                    sleep(randint(20, 40))
+            lottery()
+        sleep(randint(1800,3600))
 
 
 
