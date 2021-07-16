@@ -76,6 +76,14 @@ def dig():
     press('enter')
     sleep(randint(2, 6))
 
+def high_low():
+    arr = ['high', 'low', 'jackpot']
+    write('pls hl')
+    press('enter')
+    sleep(randint(2,5))
+    write(choice(arr))
+    press('enter')
+    sleep(randint(2,5))
 
 def fish():
     write('pls fish')
@@ -117,8 +125,8 @@ def low_priority():
 
 
 def main():
-    arr = [guess, memey, bal, postmemes, trivia, beg, dig,
-           fish, hunt, level, random_word]
+    arr = [guess, random_word, bal, postmemes, trivia, beg, dig,
+           fish, hunt, level, random_word, high_low]
 
     while 1:
         shuffle(arr)
